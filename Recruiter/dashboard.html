@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Landing Page</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        /* Dashboard */
+        .tab-wrapper {
+            background-color: #D9D9D9; /* Light gray background */
+            padding: 20px;
+            border-radius: 10px; /* Optional: Add rounded corners */
+            margin: 20px; /* Optional: Add some spacing around the container */
+        }
+
+        .tab-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .tabs {
+            list-style: none;
+            display: flex;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .tab {
+            margin-right: 20px;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tab.active {
+            border-bottom: 2px solid #0E268A;
+        }
+
+        .job-status-tabs {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .status-button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #D9D9D9;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 20px;
+        }
+
+        .status-button.active {
+            background-color: #0E268A;
+            color: white;
+        }
+
+        .job-list {
+            display: none;
+        }
+
+        .job-list.active {
+            display: block;
+        }
+
+        .job-item {
+            background-color: #5A9EDE;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .applicant-item {
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .select-industry {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            resize: vertical;
+            font-size: 14px;
+        }
+
+        /* General resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body and Main Page Styling */
+        body {
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f8f9fa; /* Optional: light background */
+        }
+
+        .main-page2 {
+            flex-grow: 1;
+        }
+
+        /* Header Styling */
+        .header-page2 {
+            width: 100%;
+            padding: 20px;
+            background-color: #313CA1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            max-width: 150px;
+        }
+
+        .icons nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .icons nav ul li {
+            margin-left: 20px;
+        }
+
+        .icons nav ul li img {
+            width: 30px; /* Increased icon size */
+            height: 30px; /* Increased icon size */
+            transition: transform 0.3s; /* Optional: add a hover effect */
+        }
+
+        .icons nav ul li img:hover {
+            transform: scale(1.1); /* Optional: slightly enlarge on hover */
+        }
+
+        /* Footer Styling */
+        footer {
+            width: 100%;
+            background-color: #D9D9D9;
+            color: red;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <main class="main-page2">
+        <header class="header-page2">
+            <div class="logo">
+                <img src="Pictures/Logo.png" alt="Job Swiper Logo">
+            </div>
+            <div class="icons">
+                <nav>
+                    <ul>
+                        <li><a href="recruiterhomepage.html"><img src="Pictures/home.png" alt="Home"></a></li>
+                        <li><a href="#"><img src="Pictures/message.png" alt="Chat"></a></li>
+                        <li><a href="#"><img src="Pictures/notification.png" alt="Notifications"></a></li>
+                        <li><a href="#"><img src="Pictures/profile.png" alt="Profile"></a>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="editProfile.html">Edit Profile</a></li>
+                                    <li><a href="dashboard.html">Dashboard</a></li>
+                                    <li><a href="../about.html">About</a></li>
+                                    <li><a href="#" id="logout">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="tab-wrapper">
+            <div class="tab-section">
+                <ul class="tabs">
+                    <li class="tab active" onclick="showTab('open-jobs')">Posted Jobs</li>
+                    <li class="tab" onclick="showTab('applicants')">Available Applicants</li>
+                    <li class="tab" onclick="showTab('message')">Message</li>
+                </ul>
+
+                <!-- Open and Closed Jobs Section -->
+                <div class="job-list open active" id="open-jobs">
+                    <div class="job-item">
+                        <h3>Software Engineer</h3>
+                        <p>Location: Remote</p>
+                        <p>Salary: R80,000 - R100,000</p>
+                    </div>
+                    <div class="job-item">
+                        <h3>Product Manager</h3>
+                        <p>Location: Cape Town, WC</p>
+                        <p>Salary: R90,000 - R120,000</p>
+                    </div>
+                </div>
+                <div class="job-list closed">
+                    <p>No closed jobs yet</p>
+                </div>
+
+                <!-- Available Applicants Section -->
+                <div class="job-list applicants">
+                    <h2>Available Applicants</h2>
+                    <div class="applicant-item">
+                        <p>Applicant 1</p>
+                    </div>
+                    <div class="applicant-item">
+                        <p>Applicant 2</p>
+                    </div>
+                    <div class="select-industry">
+                        <h3>Select Industry</h3>
+                        <select>
+                            <option value="1">Finance</option>
+                            <option value="2">Education</option>
+                            <option value="3">Health</option>
+                        </select>
+                    </div>
+                    <div class="applicant-review">
+                        <h3>Applicant Review</h3>
+                        <textarea placeholder="Write a review..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Message Section -->
+                <div class="job-list message">
+                    <h2>Your Messages</h2>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Job Swiper. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

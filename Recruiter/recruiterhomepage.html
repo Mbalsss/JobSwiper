@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Landing Page</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <main class="main-page2">
+        <header class="header-page2">
+            <div class="logo">
+                <img src="Pictures/Logo.png" alt="Job Swiper Logo">
+            </div>
+            <div class="icons">
+                <nav>
+                    <ul>
+                        <li><a href="recruiterhomepage.html"><img src="Pictures/home.png" alt="Home"></a></li>
+                        <li><a href="#"><img src="Pictures/message.png" alt="Chat"></a></li>
+                        <li><a href="#"><img src="Pictures/notification.png" alt="Notifications"></a></li>
+                        <li><a href="#"><img src="Pictures/profile.png" alt="Profile"></a>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="editProfile.html">View Profile</a></li>
+                                    <li><a href="dashboard.html">Dashboard</a></li>
+                                    <li><a href="../about.html">About</a></li>
+                                    <li><a href="#" id="logout">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="welcome-section">
+                <h1>Welcome, <span id="recruiter-name">[Recruiter Name]</span>!</h1>
+                <p>Your dashboard awaits. Manage job postings, view candidates, and more.</p>
+                <button onclick="location.href='job.html'" aria-label="Post a Job">Post Job</button>
+
+            </div>
+
+            <div class="job-posting">
+                <h2>Current Job Postings</h2>
+                <div class="job-list">
+                    <!-- Software Engineer Job -->
+                    <div class="job-item" id="software-engineer">
+                        <h3>Software Engineer</h3>
+                        <p>Location: Cape Town, Western Cape</p>
+                        <p>Description: Seeking a skilled Software Engineer with 4 years of experience.</p>
+                        <button onclick="openJobModal('software-engineer')">View Details</button>
+                    </div>
+
+                    <!-- Product Manager Job -->
+                    <div class="job-item" id="product-manager">
+                        <h3>Product Manager</h3>
+                        <p>Location: Johannesburg, Gauteng</p>
+                        <p>Description: Looking for a Product Manager with a strong background in product lifecycle management.</p>
+                        <button onclick="openJobModal('product-manager')">View Details</button>
+                    </div>
+
+                    <!-- Data Analyst Job -->
+                    <div class="job-item" id="data-analyst">
+                        <h3>Data Analyst</h3>
+                        <p>Location: Pretoria, Gauteng</p>
+                        <p>Description: Data Analyst required with 4 years of experience in data mining.</p>
+                        <button onclick="openJobModal('data-analyst')">View Details</button>
+                    </div>
+
+                    <!-- Job Details Modal -->
+                    <div id="job-modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" onclick="closeJobModal()">&times;</span>
+                            <h2 id="modal-job-title">Job Title</h2>
+                            <p id="modal-job-location">Location</p>
+                            <p id="modal-job-description">Job Description</p>
+                            <button onclick="showEditForm()">Edit Job</button>
+
+                            <!-- Edit Job Form (Initially Hidden) -->
+                            <div id="edit-job-form-container" style="display:none;">
+                                <h3>Edit Job</h3>
+                                <form id="edit-job-form" action="register.php" method="post">
+                                <input type="hidden" id="edit-job-id" name="job-id" value="<?php echo $job['id']; ?>">
+        
+                                <label for="edit-job-title">Job Title:</label>
+                                <input type="text" id="edit-job-title" name="job-title" value="<?php echo htmlspecialchars($job['title']); ?>" required>
+        
+                                <label for="edit-job-location">Location:</label>
+                                <input type="text" id="edit-job-location" name="job-location" value="<?php echo htmlspecialchars($job['location']); ?>" required>
+        
+                                <label for="edit-job-description">Description:</label>
+                                <textarea id="edit-job-description" name="job-description" required><?php echo htmlspecialchars($job['description']); ?></textarea>
+        
+                                <button type="submit">Save Changes</button>
+                                <button type="button" onclick="hideEditForm()">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Job Swiper. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

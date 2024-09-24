@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Reviews</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+    <main class="main-page2">
+        <header class="header-page2">
+            <div class="logo">
+                <img src="Pictures/Logo.png" alt="Job Swiper Logo">
+            </div>
+            <div class="icons">
+                <nav>
+                    <ul>
+                        <li><a href="recruiterhomepage.html"><img src="Pictures/home.png" alt="Home"></a></li>
+                        <li><a href="#"><img src="Pictures/message.png" alt="Chat"></a></li>
+                        <li><a href="#"><img src="Pictures/notification.png" alt="Notifications"></a></li>
+                        <li><a href="#"><img src="Pictures/profile.png" alt="Profile"></a>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="Profile.html">View Profile</a></li>
+                                    <li><a href="companyReviews.html">Company Reviews</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#" id="logout">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="company-container">
+            <h1>Company Reviews</h1>
+            <div class="reviews-container">
+                <div class="review">
+                    <h2>Company A</h2>
+                    <p><strong>Reviewer:</strong> John Doe</p>
+                    <p><strong>Rating:</strong> ★★★★☆</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="review">
+                    <h2>Company B</h2>
+                    <p><strong>Reviewer:</strong> Jane Smith</p>
+                    <p><strong>Rating:</strong> ★★★☆☆</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <!-- Add more reviews as needed -->
+            </div>
+
+            <div class="review-form-container">
+                <h2>Submit a Review</h2>
+                <form id="review-form">
+                    <label for="company-name">Company Name:</label>
+                    <input type="text" id="company-name" name="company-name" required>
+
+                    <label for="reviewer-name">Your Name:</label>
+                    <input type="text" id="reviewer-name" name="reviewer-name" required>
+
+                    <label for="rating">Rating:</label>
+                    <select id="rating" name="rating" required>
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★☆</option>
+                        <option value="3">★★★☆☆</option>
+                        <option value="2">★★☆☆☆</option>
+                        <option value="1">★☆☆☆☆</option>
+                    </select>
+
+                    <label for="review-text">Review:</label>
+                    <textarea id="review-text" name="review-text" rows="5" required></textarea>
+
+                    <button type="submit">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>2024 JobSwipers. All rights reserved</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="postjob.css">
+    <style>
+        /* General resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Body and Main Page Styling */
+        body {
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #313CA1;
+        }
+
+        .main-page2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        /* Header Styling */
+        .header-page2 {
+            width: 100%;
+            padding: 20px;
+            background-color: #313CA1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            max-width: 150px;
+        }
+
+        .icons nav ul {
+        display: flex;
+        list-style: none;
+    }
+
+    .icons nav ul li {
+        margin-left: 20px;
+    }
+
+    .icons nav ul li img {
+    width: 40px; /* Increase icon size */
+    height: 40px; /* Increase icon size */
+    object-fit: contain; /* Maintain aspect ratio */
+    transition: transform 0.3s; /* Optional: add a hover effect */
+}
+
+
+    .icons nav ul li img:hover {
+        transform: scale(1.1); /* Optional: slightly enlarge on hover */
+    }
+
+
+        /* Form Container and Section Styling */
+        .form-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-section {
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            width: 80vw; /* Increased width */
+            max-width: 700px; /* Increased max width */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .form-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Space between lines */
+            width: 100%;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+        }
+
+        label {
+            flex: 1;
+            text-align: left; /* Align label to the left */
+        }
+
+        .line {
+            flex: 2;
+            border-bottom: 1px solid #ccc; /* Line for input */
+            padding: 8px;
+            margin-bottom: 10px; /* Space below each line */
+            min-width: 300px; /* Make lines longer */
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 8px 16px;
+            background-color: #5483B3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            align-self: center; /* Centers the button */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styling */
+        footer {
+            width: 100%;
+            background-color: #D9D9D9;
+            color: red;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-page2">
+        <div class="logo">
+            <img src="Pictures/Logo.png" alt="Job Swiper Logo">
+        </div>
+        <div class="icons">
+            <nav>
+                <ul>
+                    <li><a href="recruiterhomepage.html"><img src="Pictures/home.png" alt="Home"></a></li>
+                    <li><a href="#"><img src="Pictures/message.png" alt="Chat"></a></li>
+                    <li><a href="#"><img src="Pictures/notification.png" alt="Notifications"></a></li>
+                    <li><a href="#"><img src="Pictures/profile.png" alt="Profile"></a>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li><a href="editProfile.html">View Profile</a></li>
+                                <li><a href="dashboard.html">Dashboard</a></li>
+                                <li><a href="../about.html">About</a></li>
+                                <li><a href="#" id="logout">Sign out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-page2">
+        <div class="form-container">
+            <section class="form-section">
+                <h2>Add Job Details</h2>
+                <div class="form-list">
+                    <div class="form-row">
+                        <label for="description">Company Description:</label>
+                        <div class="line" id="description">Company description goes here</div>
+                    </div>
+                    <div class="form-row">
+                        <label for="title">Job Title:</label>
+                        <div class="line" id="title">Job title goes here</div>
+                    </div>
+                    <div class="form-row">
+                        <label for="location">Job Location:</label>
+                        <div class="line" id="location">Job location goes here</div>
+                    </div>
+                    <div class="form-row">
+                        <label for="type">Job Type:</label>
+                        <div class="line" id="type">Job type goes here</div>
+                    </div>
+                    <div class="form-row">
+                        <label for="salary">Salary:</label>
+                        <div class="line" id="salary">Salary goes here</div>
+                    </div>
+                </div>
+                <button type="button">Post a Job</button>
+            </section>
+        </div>
+    </main>
+        
+    <footer>
+        <p>&copy; 2024 JobSwipers. All rights reserved</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

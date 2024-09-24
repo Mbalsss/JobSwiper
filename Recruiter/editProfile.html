@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter View Profile</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <main class="main-page2">
+        <header class="header-page2">
+            <div class="logo">
+                <img src="Pictures/Logo.png" alt="Job Swiper Logo">
+            </div>
+            <div class="icons">
+                <nav>
+                    <ul>
+                        <li><a href="recruiterhomepage.html" aria-label="Home"><img src="Pictures/home.png" alt="Home"></a></li>
+                        <li><a href="#" aria-label="Chat"><img src="Pictures/message.png" alt="Chat"></a></li>
+                        <li><a href="#" aria-label="Notifications"><img src="Pictures/notification.png" alt="Notifications"></a></li>
+                        <li><a href="#" aria-label="Profile"><img src="Pictures/profile.png" alt="Profile"></a>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="editProfile.html">View Profile</a></li>
+                                    <li><a href="dashboard.html">Dashboard</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#" id="logout">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="settings-container">
+            <div class="heading-container">
+                <h1>Recruiter Account</h1>
+                <p>Options to manage your personal info and preferences</p>
+            </div>
+
+            <form id="profile-form">
+                <div class="personal-info">
+                    <h2>Personal Information</h2>
+
+                    <!-- Name -->
+                    <div class="info-item" onclick="showEdit('name')">
+                        <span class="info-label">Name:</span>
+                        <span class="info-value" id="name_display"></span>
+                    </div>
+                    <div class="edit-container" id="name-edit">
+                        <label for="name-input">Edit Name:</label>
+                        <input type="text" id="name-input" name="name" required>
+                        <button type="button" onclick="saveEdit('name')">Save</button>
+                        <button type="button" onclick="cancelEdit('name')">Cancel</button>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="info-item" onclick="showEdit('email')">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value" id="email-display"></span>
+                    </div>
+                    <div class="edit-container" id="email-edit">
+                        <label for="email-input">Edit Email:</label>
+                        <input type="email" id="email-input" name="email" required>
+                        <button type="button" onclick="saveEdit('email')">Save</button>
+                        <button type="button" onclick="cancelEdit('email')">Cancel</button>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="info-item" onclick="showEdit('phone')">
+                        <span class="info-label">Phone:</span>
+                        <span class="info-value" id="phone-display"></span>
+                    </div>
+                    <div class="edit-container" id="phone-edit">
+                        <label for="phone-input">Edit Phone:</label>
+                        <input type="tel" id="phone-input" name="phone" required>
+                        <button type="button" onclick="saveEdit('phone')">Save</button>
+                        <button type="button" onclick="cancelEdit('phone')">Cancel</button>
+                    </div>
+
+                    <!-- Position -->
+                    <div class="info-item" onclick="showEdit('role')">
+                        <span class="info-label">Position:</span>
+                        <span class="info-value" id="role-display"></span>
+                    </div>
+                    <div class="edit-container" id="role-edit">
+                        <label for="role-input">Edit Position:</label>
+                        <input type="text" id="role-input" name="role" required>
+                        <button type="button" onclick="saveEdit('role')">Save</button>
+                        <button type="button" onclick="cancelEdit('role')">Cancel</button>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="info-item" onclick="showEdit('company')">
+                        <span class="info-label">Company:</span>
+                        <span class="info-value" id="company-display"></span>
+                    </div>
+                    <div class="edit-container" id="company-edit">
+                        <label for="company-input">Edit Company:</label>
+                        <input type="text" id="company-input" name="company" required>
+                        <button type="button" onclick="saveEdit('company')">Save</button>
+                        <button type="button" onclick="cancelEdit('company')">Cancel</button>
+                    </div>
+
+                    <!-- Language -->
+                    <div class="info-item" onclick="showEdit('language')">
+                        <span class="info-label">Language:</span>
+                        <span class="info-value" id="language-display"></span>
+                    </div>
+                    <div class="edit-container" id="language-edit">
+                        <label for="language-select">Edit Language:</label>
+                        <select id="language-select" name="language">
+                            <option value="english">English</option>
+                            <option value="spanish">Spanish</option>
+                            <option value="french">French</option>
+                            <option value="german">German</option>
+                            <option value="chinese">Chinese</option>
+                        </select>
+                        <button type="button" onclick="saveEdit('language')">Save</button>
+                        <button type="button" onclick="cancelEdit('language')">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Job Swipers. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

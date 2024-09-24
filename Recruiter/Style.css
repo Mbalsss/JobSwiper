@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-page2 {
+    height: 100vh;
+    width: 100vw;
+    background-color: #313CA1;
+}
+
+.header-page2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+}
+
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.icons {
+    margin-left: 0px;
+    padding: 10px;
+    margin-right: 50px;
+}
+
+.icons nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center; 
+    margin: 0;
+    padding: 0;
+}
+
+.icons nav ul li {
+    margin:0  15px; 
+    position: relative;
+}
+
+.icons nav ul a img{
+    width: 35px; 
+    height: auto;
+}
+
+.icons nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+
+
+/* Style for the dropdown nav */
+
+.dropdown-content{
+    display: none;
+    width: 200px; /* Adjust as needed */
+    min-width: 200px; /* Ensures dropdown is wide enough */
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #313CA1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+    position: absolute; /* Ensure the container is positioned absolutely */
+    right: 10px; /* Move the container 2px to the right */
+}
+
+.dropdown-content ul{
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    display: block;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.icons nav ul li .dropdown-content{
+    display: none;
+    position: absolute;
+    top:30px;
+    right: 0;
+    z-index: 1;
+}
+
+
+.icons nav ul li .dropdown-content ul li {
+    padding: 10px;
+   
+}
+
+.icons nav ul li .dropdown-content ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+}
+
+.icons nav ul li .dropdown-content ul li:last-child {
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.icons nav ul li:hover .dropdown-content {
+    display: block; 
+}
+
+.icons nav ul li .dropdown-content ul li:hover a{
+    color:#D9D9D9;
+}
+
+/*Landing Page */
+
+.content {
+    height: 60vh; /* Adjust as needed */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #D9D9D9;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 10px; /* Space from the top, adjust if needed */
+    margin-bottom: 10px; /* Space from the footer */
+    border-radius: 10px;
+    box-sizing: border-box; /* Ensure padding and border are included in height calculation */
+}
+
+
+.welcome-section {
+    padding: 30px;
+    margin: 0; /* Remove margins to ensure it is aligned to the top */
+    text-align: center;
+    border-radius: 10px;
+    width: 100%; 
+}
+
+.welcome-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.welcome-section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.welcome-section button {
+    background-color: #5483B3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.welcome-section button:hover {
+    background-color: #313CA1;
+}
+
+.job-posting {
+    padding: 30px;
+    margin-left: 0;
+}
+
+.job-postings h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.job-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.job-item {
+    border: 2px solid #000;
+    padding: 5px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.job-item h3 {
+    margin-top: 0;
+}
+
+.job-item button {
+    background-color: #5483B3;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.job-item button:hover {
+    background-color: #313CA1;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Edit Job Form Styles */
+#edit-job-form-container {
+    margin-top: 20px;
+}
+
+#edit-job-form textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+
+/*Edit Profile Page*/
+
+.settings-container {
+    width: 90%; /* Adjusted width for responsiveness */
+    height: 70%; /* Set a fixed height or adjust as needed */
+    background-color: #D9D9D9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: auto; /* Add scroll if content overflows */
+    margin: 20px auto;
+}
+
+.heading-container {
+    text-align: center;
+    margin: 10px 0 20px; 
+}
+
+.heading-container h1{
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    color: #000; 
+    margin: 0;
+    text-align: center; /* Center text alignment */
+}
+
+.settings-container h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.personal-info {
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.info-label {
+    font-weight: bold;
+}
+
+/* Ensure the background color of the edit-container matches */
+.edit-container {
+    background-color: #D9D9D9; /* Match this with the background of your container */
+    padding: 20px; /* Add some padding if needed */
+    border-radius: 10px; /* Match border radius to maintain consistency */
+    margin-top: 10px; /* Space between different edit sections */
+    display:none;
+}
+
+.edit-container.active {
+    display: block; /* Show the edit container when active */
+}
+
+/* Style for input fields */
+.edit-container input,
+.edit-container select,
+.edit-container textarea {
+    background-color: #D9D9D9; /* Match this with the background color of edit-container */
+    border: 1px solid #ccc; /* Light border for input fields */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners for input fields */
+    width: calc(100% - 22px); /* Adjust width to account for padding */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+.edit-container button {
+    background-color: #5483B3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Space between buttons */
+}
+
+.edit-container button:hover {
+    background-color: #313CA1;
+}
+
+
+/* Go Back Button Styles */
+.back-button {
+    display: block;
+    width: auto;
+    padding: 10px 20px;
+    background-color: #5483B3; /* Match your design scheme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px; /* Space below the button */
+    text-align: center;
+    text-decoration: none; /* Remove underline from text if it's a link */
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #4a6ea9; /* Slightly darker shade on hover */
+}
+
+/*Post Job */
+/* Form Container and Section Styling */
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-section {
+    background-color: #e0e0e0;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw; /* Set width to 90% of the viewport width */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center; /* Center the text inside the h2 */
+    width: 100%;
+}
+
+.form-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+label {
+    flex: 1;
+    text-align: right;
+}
+
+input {
+    flex: 2;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center; /* Centers the button */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+footer {
+    width: 100%;
+    background-color: #D9D9D9;
+    color: red;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+}

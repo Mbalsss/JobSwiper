@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    background-color: #313CA1;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+}
+
+
+.logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.icons {
+    margin-left: 0px;
+    padding: 10px;
+    margin-right: 50px;
+}
+
+.icons nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center; 
+    margin: 0;
+    padding: 0;
+}
+
+.icons nav ul li {
+    margin:0  15px; 
+    position: relative;
+}
+
+.icons nav ul a img{
+    width: 35px; 
+    height: auto;
+}
+
+.icons nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+}
+
+
+
+/* Style for the dropdown nav */
+
+.dropdown-content{
+    display: none;
+    width: 200px; /* Adjust as needed */
+    min-width: 200px; /* Ensures dropdown is wide enough */
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #313CA1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+    position: absolute; /* Ensure the container is positioned absolutely */
+    right: 10px; /* Move the container 2px to the right */
+}
+
+.dropdown-content ul{
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    display: block;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.icons nav ul li .dropdown-content{
+    display: none;
+    position: absolute;
+    top:30px;
+    right: 0;
+    z-index: 1;
+}
+
+
+.icons nav ul li .dropdown-content ul li {
+    padding: 10px;
+   
+}
+
+.icons nav ul li .dropdown-content ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 100%;
+}
+
+.icons nav ul li .dropdown-content ul li:last-child {
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.icons nav ul li:hover .dropdown-content {
+    display: block; 
+}
+
+.icons nav ul li .dropdown-content ul li:hover a{
+    color:#D9D9D9;
+}
